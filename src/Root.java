@@ -76,6 +76,14 @@ public class Root {
         return null;
     }
 
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public List<Plato> getMenu() {
+        return menu;
+    }
+
     // Método para eliminar un plato del menú
     public void eliminarPlato(String nombre) {
         for (Plato plato : menu) {

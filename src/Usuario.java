@@ -16,6 +16,11 @@ public class Usuario {
         this.telefono = telefono;
         this.email = email;
     }
+    
+    @Override
+    public String toString() {
+        return "Cliente ID: " + getId() + "\nNombre: " + getNombre() + " " + getApellido() + "\nTeléfono: " + getTelefono() + "\nEmail: " + getEmail();
+    }
 
     // Métodos getter para acceder a los atributos
 

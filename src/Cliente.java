@@ -4,8 +4,5 @@ public class Cliente extends Usuario {
         super(id, contraseña, "Cliente", nombre, apellido, telefono, email); // Llamamos al constructor de la clase base Usuario
     }
 
-    @Override
-    public String toString() {
-        return "Cliente ID: " + getId() + "\nNombre: " + getNombre() + " " + getApellido() + "\nTeléfono: " + getTelefono() + "\nEmail: " + getEmail();
-    }
+    
 }
