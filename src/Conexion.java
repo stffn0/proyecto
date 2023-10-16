@@ -1,19 +1,45 @@
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Conexion {
-  
-    public static Connection obtenerConexion(){
-        String url="jbdc:sqlserver://localhost:1433;"
-                +"database=usuarios;"
-                +"user=sa;"
-                +"password=12345;";
-        
+
+    String bd = "Usuarios";
+    String url = "jdbc:mysql://localhost:3306/";
+    String user = "admin";
+    String password = "admin";
+    String driver = "com.mysql.cj.jdbc.Driver";
+    Connection cx;
+
+    public Conexion() {
+
+    }
+    
+    public static void main(String[] args){
+        Conexion conexion = new Conexion();
+        conexion.conectar();
+    }
+
+    public Connection conectar() {
         try {
-        Connection con = DriverManager.getConnection(url);
-        return con;
-        } catch (SQLException ex){
-            System.out.println(ex.toString());
-            return null;
+            Class.forName(driver);
+            cx = DriverManager.getConnection(url + bd, user, password);
+            System.out.println("Conexion Exitosa con BD: "+bd+" !!");
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println("No se pudo conectar a bd : "+bd);
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cx;
+    }
+    
+    public void desconectar(){
+        try {
+            cx.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
 }
