@@ -2,13 +2,11 @@ public class Plato {
     private String nombre;
     private String descripcion;
     private double precio;
-    private String[] ingredientes;
 
-    public Plato(String nombre, String descripcion, double precio, String[] ingredientes) {
+    public Plato(String nombre, String descripcion, double precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.ingredientes = ingredientes;
     }
 
     public String getNombre() {
@@ -23,12 +21,21 @@ public class Plato {
         return precio;
     }
 
-    public String[] getIngredientes() {
-        return ingredientes;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
 
     @Override
     public String toString() {
-        return "Plato: " + nombre + "\nDescripción: " + descripcion + "\nPrecio: $" + precio + "\nIngredientes: " + String.join(", ", ingredientes);
+        return "Plato: " + nombre + "\nDescripción: " + descripcion + "\nPrecio: $" + precio;
     }
 }
