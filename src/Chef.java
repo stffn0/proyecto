@@ -1,4 +1,3 @@
-package proyecto;
 
 public class Chef extends Usuario {
     
