@@ -1,12 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author User
- */
-public class Mesero {
+public class Mesero extends Usuario {
     
+    public void tomar_orden(){
+    }
+    public void agregar_plato_orden(){     
+    }
+    public void procesar_orden(){ 
+    }
+    
+    aaaaaa
 }

@@ -1,12 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author User
- */
-public class Chef {
+public class Chef extends Usuario {
     
+    public void ver_cola_ordenes(){
+        
+    }
+    public void ver_orden(){
+        
+    }
+    public void cambiar_estado_orden(){
+        
+    }
+    public void preparar_plato(){
+        
+    }
+    public void nuevo_mesero(){
+        
+    }
+    public void borrar_mesero(){
+        
+    }
 }

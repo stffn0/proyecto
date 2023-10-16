@@ -1,12 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author User
- */
-public class Orden {
+public class Orden extends Plato {
     
+    String idOrden, idMesero, estado;
+    int mesa;
 }
