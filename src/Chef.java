@@ -1,3 +1,5 @@
+package proyecto;
+
 public class Chef extends Usuario {
     
     public void ver_cola_ordenes(){
