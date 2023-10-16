@@ -7,5 +7,5 @@ public class Mesero extends Usuario {
     public void procesar_orden(){ 
     }
     
-    aaaaaa
+   
 }
