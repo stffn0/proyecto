@@ -4,7 +4,7 @@ import java.util.List;
 public class Mesero extends Usuario {
     private List<Orden> ordenes;
 
-    public Mesero(int id, String contraseña, String tipoDeUsuario, String nombre, String apellido, String telefono, String email) {
+    public Mesero(int id, String contraseña, String nombre, String apellido, String telefono, String email) {
         super(id, contraseña, "Mesero", nombre, apellido, telefono, email);
         this.ordenes = new ArrayList<>();
     }
