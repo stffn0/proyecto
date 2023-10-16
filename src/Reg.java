@@ -2,6 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,11 +17,12 @@ public class Reg extends javax.swing.JFrame {
      * Creates new form Reg
      */
     Conexion cx;
+
     public Reg() {
         cx = new Conexion();
         cx.conectar();
         initComponents();
-        
+
     }
 
     /**
@@ -112,7 +117,23 @@ public class Reg extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        // TODO add your handling code here:
+
+        try {
+            String id = txtUsuario.getText();
+            String password = String.valueOf(txtPassword.getPassword());
+            String query = "SELECT * FROM users WHERE id='"+id+"' AND contrasena='"+password+"'";
+            Statement st = cx.conectar().createStatement();
+            ResultSet rs=st.executeQuery(query);
+            if(rs.next()){
+                JOptionPane.showConfirmDialog(null,"El usuario esta registrado!!");
+            }else{
+                JOptionPane.showConfirmDialog(null, "El usuario no existe");
+            }
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(Reg.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

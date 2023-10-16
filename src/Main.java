@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        new Conexion();
+        
         // Crear una instancia de Root
         Root restaurante = new Root();
 
