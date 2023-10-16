@@ -7,8 +7,8 @@ public class Conexion {
 
     String bd = "Usuarios";
     String url = "jdbc:mysql://localhost:3306/";
-    String user = "admin";
-    String password = "admin";
+    String user = "root";
+    String password = "";
     String driver = "com.mysql.cj.jdbc.Driver";
     Connection cx;
 
