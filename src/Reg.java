@@ -119,6 +119,7 @@ public class Reg extends javax.swing.JFrame {
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
 
         try {
+            //Crea las credenciales y realiza la consulta
             String id = txtUsuario.getText();
             String password = String.valueOf(txtPassword.getPassword());
             String query = "SELECT * FROM users WHERE id='" + id + "' AND contrasena='" + password + "'";
@@ -126,6 +127,7 @@ public class Reg extends javax.swing.JFrame {
             ResultSet rs = st.executeQuery(query);
 
             if (rs.next()) {
+                //Extrae los datos
                 int elid = rs.getInt("id");
                 String contrasena = rs.getString("contrasena");
                 String nombre = rs.getString("nombre");
