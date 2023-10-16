@@ -1,86 +1,81 @@
 public class Usuario {
+    private int id;
+    private String contraseña;
+    private String tipoDeUsuario;
+    private String nombre;
+    private String apellido;
+    private String telefono; //Por conveniencia String 
+    private String email;
 
-    private int Id, telf, idtipo;
-    private String tipoU, contra, nombres, apellidos, email, dir, fechaN;
+    public Usuario(int id, String contraseña, String tipoDeUsuario, String nombre, String apellido, String telefono, String email) {
+        this.id = id;
+        this.contraseña = contraseña;
+        this.tipoDeUsuario = tipoDeUsuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.email = email;
+    }
+
+    // Métodos getter para acceder a los atributos
 
     public int getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(int Id) {
-        this.Id = Id;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public int getTelf() {
-        return telf;
+    public String getTipoDeUsuario() {
+        return tipoDeUsuario;
     }
 
-    public void setTelf(int telf) {
-        this.telf = telf;
+    public String getNombre() {
+        return nombre;
     }
 
-    public int getIdtipo() {
-        return idtipo;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setIdtipo(int idtipo) {
-        this.idtipo = idtipo;
-    }
-
-    public String getTipoU() {
-        return tipoU;
-    }
-
-    public void setTipoU(String tipoU) {
-        this.tipoU = tipoU;
-    }
-
-    public String getContra() {
-        return contra;
-    }
-
-    public void setContra(String contra) {
-        this.contra = contra;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public String getTelefono() {
+        return telefono;
     }
 
     public String getEmail() {
         return email;
     }
 
+
+    // Métodos setter para modificar los atributos
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public void setTipoDeUsuario(String tipoDeUsuario) {
+        this.tipoDeUsuario = tipoDeUsuario;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getDir() {
-        return dir;
-    }
-
-    public void setDir(String dir) {
-        this.dir = dir;
-    }
-
-    public String getFechaN() {
-        return fechaN;
-    }
-
-    public void setFechaN(String fechaN) {
-        this.fechaN = fechaN;
-    }
-    
 }
