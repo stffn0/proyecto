@@ -121,19 +121,29 @@ public class Reg extends javax.swing.JFrame {
         try {
             String id = txtUsuario.getText();
             String password = String.valueOf(txtPassword.getPassword());
-            String query = "SELECT * FROM users WHERE id='"+id+"' AND contrasena='"+password+"'";
+            String query = "SELECT * FROM users WHERE id='" + id + "' AND contrasena='" + password + "'";
             Statement st = cx.conectar().createStatement();
-            ResultSet rs=st.executeQuery(query);
-            if(rs.next()){
-                JOptionPane.showConfirmDialog(null,"El usuario esta registrado!!");
-            }else{
+            ResultSet rs = st.executeQuery(query);
+
+            if (rs.next()) {
+                int elid = rs.getInt("id");
+                String contrasena = rs.getString("contrasena");
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+                String tipo_usuario = rs.getString("tipo_usuario");
+                String telefono = rs.getString("telefono");
+                String email = rs.getString("email");
+                Usuario elUsuario = new Usuario(elid,contrasena,tipo_usuario,nombre, apellido, telefono,email);
+                
+                JOptionPane.showConfirmDialog(null, "El usuario esta registrado!!"+elUsuario.toString());
+            } else {
                 JOptionPane.showConfirmDialog(null, "El usuario no existe");
             }
-           
+
         } catch (SQLException ex) {
             Logger.getLogger(Reg.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
